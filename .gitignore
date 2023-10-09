@@ -1,32 +1,65 @@
-# Prerequisites
-*.d
+namespace ConsoleApp11
+{
+   
 
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
+    class Program
+    {
+        static void Main()
+        {
+                // Product 
+                var product = new Product("Laptop", "Dell", 1200.00m);
+                product.ShowInfo();
 
-# Precompiled Headers
-*.gch
-*.pch
+                // Phone
+                var phone = new Phone("Smartphone", "Samsung", 800.00m, "Black", 2022, 10);
+                phone.ShowInfo();   
+        }
+    }
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
+    class Product
+    {
+        public string Name;
+        public string BrandName;
+        public decimal Price;
 
-# Fortran module files
-*.mod
-*.smod
+        public Product(string name, string brandName, decimal price)
+        {
+           
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+            Name = name;
+            BrandName = brandName;
+            Price = price;
+        }
 
-# Executables
-*.exe
-*.out
-*.app
+        public void ShowInfo()
+        {
+            Console.WriteLine($"Name: {Name}, Brand: {BrandName}, Price: {Price}");
+        }
+    }
+
+    class Phone : Product
+    {
+        public string Color;
+        public int Year;
+        public int Count;
+        public decimal Income;
+
+        public Phone(string name, string brandName, decimal price, string color, int year, int count)
+            : base(name, brandName, price)
+        {
+
+            Color = color;
+            Year = year;
+            Count = count;
+            Income = 0;
+        }
+
+        public bool Sale(int )
+        {
+            
+        }
+    }
+
+
+}
+
